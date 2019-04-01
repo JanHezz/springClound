@@ -1,0 +1,14 @@
+server:
+  port: 9000
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#正式环境注销
+  server:
+      enable-self-preservation: false       #是关闭自我保护模式，默认为true。
+      eviction-interval-timer-in-ms: 4000  #清理无效节点的时间间隔，默认
